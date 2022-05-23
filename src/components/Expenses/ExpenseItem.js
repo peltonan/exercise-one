@@ -2,6 +2,7 @@ import ExpenseDate from './ExpenseDate';
 import './ExpenseItem.css'
 import { useState } from 'react';
 
+
 const ExpenseItem = (props) => {
 
     const [title, setTitle] = useState(props.title);
