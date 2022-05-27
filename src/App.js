@@ -1,14 +1,13 @@
 import './App.css';
-import ExpenseItem from './components/Expenses/ExpenseItem';
 import NewExpense from './components/NewExpense/NewExpense';
-import ExpensesFilter from './components/Expenses/ExpensesFilter';
+import Expenses from './components/Expenses/Expenses'
 
 import { expenses } from './components/Expenses/ExpensesList'
 
 function App() {
 
   const addExpenseHandler = expense => {
-    console.log('in App.js');
+    console.log('in Expenses.js');
     console.log(expense);
   };
 
@@ -17,21 +16,11 @@ function App() {
       <div className="App">
         <div className="expensesList">
           <NewExpense onAddExpense={addExpenseHandler} />
-          <ExpensesFilter />
-          {expenses.map(expense => {
-            return (
-              <ExpenseItem
-                title={expense.title}
-                amount={expense.amount}
-                date={expense.date}
-              />
-            )
-          }
-          )}
+          <Expenses expenses={expenses} />
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default App;
