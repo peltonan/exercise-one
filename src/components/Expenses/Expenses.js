@@ -14,7 +14,7 @@ const Expenses = (props) => {
         console.log(selectedYear);
     };
 
-    console.log('year', year);
+    console.log('Expenses.js: ', props.expenses);
 
     return (
         <div>
@@ -26,6 +26,7 @@ const Expenses = (props) => {
                             title={expense.title}
                             amount={expense.amount}
                             date={expense.date}
+                            key={expense.id}
                         />
 
                     )

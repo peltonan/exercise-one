@@ -1,14 +1,17 @@
 import './App.css';
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses'
+import { useState } from 'react';
 
-import { expenses } from './components/Expenses/ExpensesList'
+import { DUMMY_EXPENSES } from './components/Expenses/ExpensesList'
 
-function App() {
+const App = () => {
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   const addExpenseHandler = expense => {
-    console.log('in Expenses.js');
-    console.log(expense);
+    setExpenses(prevExpenses => {
+      return [expense, ...prevExpenses]
+    });
   };
 
   return (
@@ -22,5 +25,6 @@ function App() {
     </div>
   );
 };
+
 
 export default App;
